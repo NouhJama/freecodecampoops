@@ -20,6 +20,9 @@ class Item:
     def apply_discount(self):
         self.price = self.price * self.pay_rate
 
+    def __repr__(self):
+        return f"Item('{self.name}', {self.price}, {self.quantity})"
+
 
 item1 = Item("Phone", 100, 4) # Create an instance of Item and set attributes
 item2 = Item("Laptop", 1500, 3) # Create another instance of Item and set attributes
@@ -33,3 +36,5 @@ print(f"item1 price after discount: {item1.price}")
 item2.pay_rate = 0.7 # Override the class attribute for this instance only
 item2.apply_discount() # Apply discount using the class's pay_rate
 print(f"item2 price after discount: {item2.price}")
+
+print(Item.all)  # Show all instances
